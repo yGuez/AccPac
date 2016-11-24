@@ -5,5 +5,9 @@
         <file>Page1Form.ui.qml</file>
         <file>content/image/go-button.png</file>
         <file>content/StartScreen.qml</file>
+        <file>content/BallBase.qml</file>
+        <file>content/image/black.png</file>
+        <file>content/image/green.png</file>
+        <file>content/image/nuck.png</file>
     </qresource>
 </RCC>
