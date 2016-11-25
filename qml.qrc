@@ -7,5 +7,6 @@
         <file>content/image/black.png</file>
         <file>content/image/green.png</file>
         <file>content/image/nuck.png</file>
+        <file>content/BallGamer.qml</file>
     </qresource>
 </RCC>
