@@ -2,9 +2,11 @@ import QtQuick 2.0
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.0
 import QtSensors 5.0
+import "logic.js" as Logic
 
 Item {
     id:ballGamer
+
     Accelerometer {
         id: accel
         dataRate: 100
@@ -31,11 +33,20 @@ Item {
 
                 bubble.x = newX
                 bubble.y = newY
+
+            for(var i = 0; i<Logic.ret.length; i++){
+                if(Math.round(Math.sqrt(bubble.x)) === Math.round(Math.sqrt(Logic.ret[i].x))&& Math.round(Math.sqrt(bubble.y)) === Math.round(Math.sqrt(Logic.ret[i].y))){
+                    console.log("ddddd", Logic.ret[i]);
+                    Logic.ret[i].destroy();
+                }
+            }
+
         }
     }
 
     function calcPitch(x,y,z) {
         return -(Math.atan(y / Math.sqrt(x * x + z * z)) * 57.2957795);
+
     }
     function calcRoll(x,y,z) {
          return -(Math.atan(x / Math.sqrt(y * y + z * z)) * 57.2957795);
@@ -44,8 +55,8 @@ Item {
     Rectangle {
         id: bubble
         color: "red"
-        width: 50
-        height: 50
+        width: 40
+        height: 40
         radius: bubble.width/2
         property real centerX: mainWindow.width / 2
         property real centerY: mainWindow.height / 2

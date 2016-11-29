@@ -8,5 +8,6 @@
         <file>content/image/green.png</file>
         <file>content/image/nuck.png</file>
         <file>content/BallGamer.qml</file>
+        <file>content/logic.js</file>
     </qresource>
 </RCC>

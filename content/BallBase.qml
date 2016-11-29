@@ -7,10 +7,13 @@ Item {
     property bool ate: false
     width: 10
     height: 10
-    x: Math.floor((Math.random()*parent.width)+parent.width)
-    y: Math.floor((Math.random()*parent.height)+parent.height)
+    x: Math.random()*(mainWindow.width-width);
 
-    function ate() {
+
+    y: Math.random()*(mainWindow.height-height);
+
+
+    /*function ate() {
         if(ate)
             return;
         ate=true;
@@ -21,7 +24,7 @@ Item {
     function endgame() {
         if (ate && goball)
             Logic.endGame();
-    }
+    }*/
 
     Image {
         source: {
@@ -29,6 +32,10 @@ Item {
                 return "image/black.png";
             else
                 return "image/green.png";
+
         }
+        width: 30
+        height: 30
+
     }
 }
